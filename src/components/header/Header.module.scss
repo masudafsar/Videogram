@@ -1,3 +1,32 @@
 .Header {
+    border-bottom: 1px solid var(--color-light);
 
+    .Container {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .Title {
+        margin: 0;
+        font-size: 0.9rem;
+        font-weight: 900;
+        line-height: 2.5rem;
+    }
+
+    .MenuButton {
+        width: 2.5rem;
+        height: 2.5rem;
+        cursor: pointer;
+        line-height: 0;
+        border-radius: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            background-color: var(--color-light);
+        }
+    }
 }
