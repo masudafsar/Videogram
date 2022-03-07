@@ -4,13 +4,11 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 import {App} from "./layout/App";
-import {Header} from "./components/header/Header";
 
 import './styles/index.scss';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Header/>
         <App/>
     </React.StrictMode>,
     document.getElementById('root')

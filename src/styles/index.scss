@@ -18,3 +18,17 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+input {
+    background-color: var(--color-light);
+    padding: .5rem 1rem;
+    border-radius: 3rem;
+    font-family: var(--font-family);
+    border: none;
+    line-height: 1.2rem;
+
+    &:focus {
+        outline: 2px solid var(--color-dark);
+        background-color: var(--color-white);
+    }
+}
