@@ -9,7 +9,7 @@ import styles from "./Header.module.scss";
 interface Props {
 }
 
-export const Header: React.FC<Props> = ({}) => {
+export const Header: React.FC<Props> = () => {
     return (
         <header className={styles.Header}>
             <Container className={styles.Container}>

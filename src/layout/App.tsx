@@ -9,12 +9,12 @@ import {Timeline} from "../components/timeline/Timeline";
 interface Props {
 }
 
-export const App: React.FC<Props> = ({}) => {
+export const App: React.FC<Props> = () => {
     return (
         <>
             <Header/>
 
-            <Container className={styles.App}>
+            <Container className={styles.TimelineContainer}>
                 <Timeline />
             </Container>
         </>
