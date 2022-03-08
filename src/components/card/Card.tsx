@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useCallback, useEffect, useRef} from "react";
 
 import styles from "./Card.module.scss"
 import {VideoEntity} from "../../types/entity/videoEntity";
@@ -10,11 +10,23 @@ interface Props {
 
 export const Card: React.FC<Props> = ({video}) => {
     const {attributes: videoMeta} = video;
-    let videoRef = useRef()
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    useEffect(() => {
+        videoRef.current?.pause();
+    })
+
+    const handleClickVideo = useCallback(() => {
+        if (videoRef.current?.paused)
+            videoRef.current?.play();
+        else
+            videoRef.current?.pause();
+    }, [])
 
     return (
         <Container className={styles.Card}>
             <video
+                ref={videoRef}
                 className={styles.Video}
                 // autoPlay
                 // muted
@@ -23,6 +35,7 @@ export const Card: React.FC<Props> = ({video}) => {
                 preload="auto"
                 controls={false}
                 poster={videoMeta.big_poster}
+                onClick={handleClickVideo}
             >
                 <source src={videoMeta.preview_src} type="video/mp4"/>
             </video>

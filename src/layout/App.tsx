@@ -1,6 +1,4 @@
 import React from "react";
-
-import {Container} from "../components/container/Container";
 import {Header} from "../components/header/Header";
 
 import styles from './App.module.scss'
@@ -15,7 +13,7 @@ export const App: React.FC<Props> = () => {
             <Header/>
 
             <div className={styles.TimelineContainer}>
-                <Timeline />
+                <Timeline/>
             </div>
         </>
     );
