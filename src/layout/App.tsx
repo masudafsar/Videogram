@@ -14,9 +14,9 @@ export const App: React.FC<Props> = () => {
         <>
             <Header/>
 
-            <Container className={styles.TimelineContainer}>
+            <div className={styles.TimelineContainer}>
                 <Timeline />
-            </Container>
+            </div>
         </>
     );
 }

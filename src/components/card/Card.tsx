@@ -2,6 +2,7 @@ import React, {useRef} from "react";
 
 import styles from "./Card.module.scss"
 import {VideoEntity} from "../../types/entity/videoEntity";
+import {Container} from "../container/Container";
 
 interface Props {
     video: VideoEntity
@@ -12,7 +13,7 @@ export const Card: React.FC<Props> = ({video}) => {
     let videoRef = useRef()
 
     return (
-        <div className={styles.Card}>
+        <Container className={styles.Card}>
             <video
                 className={styles.Video}
                 // autoPlay
@@ -60,6 +61,6 @@ export const Card: React.FC<Props> = ({video}) => {
             <footer className={styles.CardFooter}>
                 <div className={styles.Description}>{videoMeta.description}</div>
             </footer>
-        </div>
+        </Container>
     );
 }
