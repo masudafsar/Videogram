@@ -4,14 +4,18 @@
     --color-red: #df0f50;
     --color-blue: #05a3e8;
     --color-green: #00b96c;
+
     --color-black: #000000;
     --color-dark: #484b62;
+    --color-medium: #D8D9E0;
     --color-light: #f5f5f9;
     --color-white: #ffffff;
+
     --color-primary: var(--color-red);
     --color-secondry: var(--color-blue);
     --color-text: var(--color-dark);
     --color-background: var(--color-white);
+    --color-border: var(--color-medium);
     --color-success: var(--color-green);
     --color-danger: var(--color-red);
 }
