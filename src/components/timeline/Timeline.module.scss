@@ -1,18 +1,20 @@
 .Timeline {
+    padding: {
+        top: calc(var(--header-size) + var(--gap-size));
+        left: var(--gap-size);
+        right: var(--gap-size);
+        bottom: var(--gap-size);
+    };
     overflow-x: hidden;
     overflow-y: scroll;
-    scroll-snap-type: y mandatory;
     position: absolute;
     z-index: 0;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    padding: calc(50px + 2rem) 2rem 1rem;
-
-    scroll-padding-top: calc(50px + 2rem);
-
-
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: calc(var(--header-size) + var(--gap-size));
     -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {

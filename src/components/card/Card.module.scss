@@ -1,7 +1,9 @@
 .Card {
     background-color: var(--color-white);
     border: 1px solid var(--color-border);
-    margin-bottom: 2rem;
+    margin: {
+        bottom: var(--gap-size);
+    }
     border-radius: 4px;
     overflow: hidden;
 
