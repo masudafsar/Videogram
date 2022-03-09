@@ -20,7 +20,7 @@ export const Card: React.FC<Props> = ({video}) => {
                 loop
                 preload="auto"
                 controls={false}
-                poster={videoMeta.big_poster}
+                poster={videoMeta.small_poster}
             >
                 <source src={videoMeta.preview_src} type="video/mp4"/>
             </VideoPlayer>

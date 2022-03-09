@@ -10,7 +10,18 @@ export const VideoPlayer: React.FC<Props> = ({playerId, ...props}) => {
     const {play, pause, isPlaying} = useContext(PlayerContext);
 
     useEffect(() => {
-        console.log(`Updated ${playerId}`);
+        let observer = new IntersectionObserver(entries =>
+            entries.forEach(entry => {
+                if (entry.intersectionRatio !== 1 && isPlaying(playerId)) {
+                    pause(playerId);
+                } else {
+                    play(playerId);
+                }
+            }), {threshold: .2});
+        playerRef.current && observer.observe(playerRef.current);
+    }, []);
+
+    useEffect(() => {
         if (isPlaying(playerId)) {
             playerRef.current?.play();
         } else {
