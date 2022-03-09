@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 
-import {ITimelineContext, TimelineContext} from "../../contexts/TimelineContext";
 import {mostViewedVideosApi} from "../../api/video/mostViewedVideos";
 import {VideoEntity} from "../../types/entity/videoEntity";
 import {Card} from "../card/Card";
 
 import styles from "./Timeline.module.scss";
+import {PlayerProvider} from "../player/PlayerProvider";
 
 interface Props {
 
@@ -13,7 +13,6 @@ interface Props {
 
 export const Timeline: React.FC<Props> = () => {
     const [videos, setVideos] = useState<VideoEntity[]>();
-    const [timelineDetails, setTimelineDetails] = useState<ITimelineContext>({});
 
     useEffect(() => {
         mostViewedVideosApi()
@@ -23,7 +22,7 @@ export const Timeline: React.FC<Props> = () => {
     }, [])
 
     return (
-        <TimelineContext.Provider value={timelineDetails}>
+        <PlayerProvider>
             <div className={styles.Timeline}>
                 {videos?.map(video => {
                     return (
@@ -33,6 +32,6 @@ export const Timeline: React.FC<Props> = () => {
                     );
                 })}
             </div>
-        </TimelineContext.Provider>
+        </PlayerProvider>
     );
 }
