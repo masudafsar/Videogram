@@ -4,9 +4,11 @@
         left: var(--gap-size);
         right: var(--gap-size);
         bottom: var(--gap-size);
-    };
-    overflow-x: hidden;
-    overflow-y: scroll;
+    }
+    overflow: {
+        x: hidden;
+        y: scroll;
+    }
     position: absolute;
     z-index: 0;
     top: 0;
