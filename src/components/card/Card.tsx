@@ -16,15 +16,14 @@ export const Card: React.FC<Props> = ({video}) => {
         <Container className={styles.Card}>
             <VideoPlayer
                 playerId={`video-${videoMeta.id}`}
+                mediaSrc={videoMeta.src}
                 className={styles.Video}
                 loop
                 muted
                 preload="auto"
                 controls={false}
                 poster={videoMeta.small_poster}
-            >
-                <source src={videoMeta.src} type="video/mp4"/>
-            </VideoPlayer>
+            />
             <header className={styles.CardHeader}>
                 <h2 className={styles.Title}>
                     <a
