@@ -1,5 +1,5 @@
 export interface GeneralEntity {
+    id: number;
     type: "Unknown" | "Video" | "Image";
-    id: string;
     attributes: any;
 }

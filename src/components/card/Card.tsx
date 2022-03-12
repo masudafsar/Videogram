@@ -18,11 +18,12 @@ export const Card: React.FC<Props> = ({video}) => {
                 playerId={`video-${videoMeta.id}`}
                 className={styles.Video}
                 loop
+                muted
                 preload="auto"
                 controls={false}
                 poster={videoMeta.small_poster}
             >
-                <source src={videoMeta.preview_src} type="video/mp4"/>
+                <source src={videoMeta.src} type="video/mp4"/>
             </VideoPlayer>
             <header className={styles.CardHeader}>
                 <h2 className={styles.Title}>
@@ -34,7 +35,7 @@ export const Card: React.FC<Props> = ({video}) => {
                 </h2>
                 <div
                     className={styles.Profile}>
-                    {videoMeta.profilePhoto && (
+                    {videoMeta.avatar && (
                         <a
                             href={`https://www.aparat.com/${videoMeta.username}`}
                             target="_blank"
@@ -42,8 +43,8 @@ export const Card: React.FC<Props> = ({video}) => {
                         >
                             <img
                                 className={styles.Avatar}
-                                src={videoMeta.profilePhoto}
-                                alt={videoMeta.sender_name}
+                                src={videoMeta.avatar}
+                                alt={videoMeta.displayName}
                             />
                         </a>
                     )}
@@ -52,7 +53,7 @@ export const Card: React.FC<Props> = ({video}) => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        {videoMeta.sender_name}
+                        {videoMeta.displayName}
                     </a>
                 </div>
             </header>
