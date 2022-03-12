@@ -1,10 +1,12 @@
 import React, {useRef, VideoHTMLAttributes} from "react";
 import {useVideoPlayer} from "../../hooks/useVideoPlayer";
 
-import {ReactComponent as PlayIcon} from '../icons/play.svg'
-import {ReactComponent as PauseIcon} from '../icons/pause.svg'
-import {ReactComponent as VolumeMuteIcon} from '../icons/vol-mute.svg'
-import {ReactComponent as VolumeFullIcon} from '../icons/vol-full.svg'
+import {
+    PlayIcon,
+    PauseIcon,
+    VolumeMuteIcon,
+    VolumeFullIcon,
+} from "../icons";
 
 import styles from "./VideoPlayer.module.scss";
 
@@ -60,6 +62,7 @@ export const VideoPlayer: React.FC<Props> = ({mediaSrc, playerId, ...props}) => 
                 src={mediaSrc}
                 ref={playerRef}
                 onTimeUpdate={handleOnTimeUpdate}
+                {...props}
             />
             <div className={styles.Controls}>
                 <div className={styles.Actions}>

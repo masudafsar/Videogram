@@ -13,7 +13,7 @@ export const Header: React.FC<Props> = () => {
     return (
         <header className={styles.Header}>
             <Container className={styles.Container}>
-                <h1 className={styles.Title}>آپاراتگرام</h1>
+                <h1 className={styles.Title}>ویدیوگرام</h1>
 
                 <input
                     className={styles.SearchInput}
