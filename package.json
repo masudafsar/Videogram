@@ -1,7 +1,17 @@
 {
-  "name": "aparatgram",
+  "name": "videogram",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Masud Afsar",
+    "email": "masud@afsar.info",
+    "url": "https://github.com/masudafsar/"
+  },
+  "homepage": "https://masudafsar.github.io/Videogram",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:masudafsar/Videogram.git"
+  },
   "dependencies": {
     "@iconify/icons-ic": "^1.2.2",
     "@iconify/react": "^3.1.4",
@@ -14,6 +24,7 @@
     "@types/react-dom": "^17.0.9",
     "axios": "^0.26.0",
     "classnames": "^2.3.1",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -25,7 +36,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
