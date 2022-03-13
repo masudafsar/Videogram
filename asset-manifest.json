@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Videogram/static/css/main.04c66505.css",
+    "main.js": "/Videogram/static/js/main.8913b3f5.js",
+    "static/js/787.369a4310.chunk.js": "/Videogram/static/js/787.369a4310.chunk.js",
+    "static/media/vol-mute.svg": "/Videogram/static/media/vol-mute.05a63359c6bff8ff0ad262d60ec582c0.svg",
+    "static/media/vol-full.svg": "/Videogram/static/media/vol-full.deda9af2d4d7833a3776ac7639765b68.svg",
+    "index.html": "/Videogram/index.html",
+    "static/media/pause.svg": "/Videogram/static/media/pause.90710c91335e08e1b21f3a14fd462a2f.svg",
+    "static/media/play.svg": "/Videogram/static/media/play.fae914548feba17036d4696c1516775d.svg",
+    "main.04c66505.css.map": "/Videogram/static/css/main.04c66505.css.map",
+    "main.8913b3f5.js.map": "/Videogram/static/js/main.8913b3f5.js.map",
+    "787.369a4310.chunk.js.map": "/Videogram/static/js/787.369a4310.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.04c66505.css",
+    "static/js/main.8913b3f5.js"
+  ]
+}
