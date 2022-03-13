@@ -9,6 +9,20 @@ export const useVideoPlayer = (videoElement: React.RefObject<HTMLVideoElement>) 
         isMuted: false,
     });
 
+    const play = () => {
+        setPlayerState({
+            ...playerState,
+            isPlaying: true,
+        });
+    }
+
+    const pause = () => {
+        setPlayerState({
+            ...playerState,
+            isPlaying: false,
+        });
+    }
+
     const togglePlay = () => {
         setPlayerState({
             ...playerState,
@@ -68,6 +82,8 @@ export const useVideoPlayer = (videoElement: React.RefObject<HTMLVideoElement>) 
 
     return {
         playerState,
+        play,
+        pause,
         togglePlay,
         handleOnTimeUpdate,
         handleVideoProgress,
