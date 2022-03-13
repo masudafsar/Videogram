@@ -1,14 +1,10 @@
-import React, {useRef, VideoHTMLAttributes} from "react";
+import React, {useCallback, useContext, useEffect, useRef, VideoHTMLAttributes} from "react";
 import {useVideoPlayer} from "../../hooks/useVideoPlayer";
 
-import {
-    PlayIcon,
-    PauseIcon,
-    VolumeMuteIcon,
-    VolumeFullIcon,
-} from "../icons";
+import {PauseIcon, PlayIcon, VolumeFullIcon, VolumeMuteIcon,} from "../icons";
 
 import styles from "./VideoPlayer.module.scss";
+import {PlayerContext} from "../../contexts/PlayerContext";
 
 interface Props extends VideoHTMLAttributes<HTMLVideoElement> {
     mediaSrc: string;
@@ -19,41 +15,37 @@ export const VideoPlayer: React.FC<Props> = ({mediaSrc, playerId, ...props}) => 
     const playerRef = useRef<HTMLVideoElement>(null);
     const {
         playerState,
+        play,
+        pause,
         togglePlay,
         toggleMute,
         handleVideoSpeed,
         handleVideoProgress,
         handleOnTimeUpdate
     } = useVideoPlayer(playerRef)
-    /*const {play, pause, isPlaying} = useContext(PlayerContext);
+    const {played, paused, isPlaying} = useContext(PlayerContext);
 
-    useEffect(() => {
-        let observer = new IntersectionObserver(entries =>
-            entries.forEach(entry => {
-                if (entry.intersectionRatio !== 1 && isPlaying(playerId)) {
-                    pause(playerId);
-                } else {
-                    play(playerId);
-                }
-            }), {threshold: .2});
-        playerRef.current && observer.observe(playerRef.current);
-    }, []);
+    // useEffect(() => {
+    //     let observer = new IntersectionObserver(entries =>
+    //         entries.forEach(entry => {
+    //             if (entry.intersectionRatio !== 1 && isPlaying(playerId)) {
+    //                 pause(playerId);
+    //             } else {
+    //                 play(playerId);
+    //             }
+    //         }), {threshold: .2});
+    //     playerRef.current && observer.observe(playerRef.current);
+    // }, []);
 
     useEffect(() => {
         if (isPlaying(playerId)) {
-            playerRef.current?.play();
+            play();
         } else {
-            playerRef.current?.pause();
+            pause();
         }
     });
 
-    const handleClickVideo = useCallback(() => {
-        if (playerRef.current?.paused) {
-            play(playerId);
-        } else {
-            pause(playerId);
-        }
-    }, [])*/
+    const handleClickVideo = useCallback(togglePlay, [playerState.isPlaying]);
 
     return (
         <div className={styles.VideoWrapper}>
@@ -61,6 +53,7 @@ export const VideoPlayer: React.FC<Props> = ({mediaSrc, playerId, ...props}) => 
                 className={styles.Video}
                 src={mediaSrc}
                 ref={playerRef}
+                onClick={handleClickVideo}
                 onTimeUpdate={handleOnTimeUpdate}
                 {...props}
             />

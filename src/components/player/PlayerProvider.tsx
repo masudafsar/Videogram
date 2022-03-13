@@ -13,7 +13,7 @@ export const PlayerProvider: React.FC<Props> = ({children}) => {
     const isPlaying = (videoId: string) => videoId === currentPlayer;
 
     return (
-        <PlayerContext.Provider value={{play, pause, isPlaying}}>
+        <PlayerContext.Provider value={{played: play, paused: pause, isPlaying}}>
             {children}
         </PlayerContext.Provider>
     );

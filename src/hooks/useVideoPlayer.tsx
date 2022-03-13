@@ -10,6 +10,7 @@ export const useVideoPlayer = (videoElement: React.RefObject<HTMLVideoElement>) 
     });
 
     const play = () => {
+        if (playerState.isPlaying) return;
         setPlayerState({
             ...playerState,
             isPlaying: true,
@@ -17,6 +18,7 @@ export const useVideoPlayer = (videoElement: React.RefObject<HTMLVideoElement>) 
     }
 
     const pause = () => {
+        if (!playerState.isPlaying) return;
         setPlayerState({
             ...playerState,
             isPlaying: false,

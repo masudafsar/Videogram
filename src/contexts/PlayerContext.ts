@@ -1,15 +1,15 @@
 import React from "react";
 
 export interface IPlayerContext {
-    play: (playerId: string) => void;
-    pause: (playerId: string) => void;
+    played: (playerId: string) => void;
+    paused: (playerId: string) => void;
     isPlaying: (playerId: string) => boolean;
 }
 
 export const PlayerContext = React.createContext<IPlayerContext>({
-    play: (playerId: string) => {
+    played: (playerId: string) => {
     },
-    pause: (playerId: string) => {
+    paused: (playerId: string) => {
     },
     isPlaying: (playerId: string) => false,
 });
